@@ -1,0 +1,2338 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08758471346744,
+            49.03514383695755
+          ],
+          [
+            -123.08731510520964,
+            49.0354259060165
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_267d5175b7d634e9",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08731510520964,
+            49.0354259060165
+          ],
+          [
+            -123.08751055733462,
+            49.035512229327296
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_67d5175b7d634e98",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08751055733462,
+            49.035512229327296
+          ],
+          [
+            -123.08735434827011,
+            49.03566343222661
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7d5175b7d634e983",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08704824749805,
+            49.035959723126005
+          ],
+          [
+            -123.08679768169817,
+            49.035875717169795
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d5175b7d634e9830",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08679768169817,
+            49.035875717169795
+          ],
+          [
+            -123.08649401465651,
+            49.036183212123
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_5175b7d634e98305",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08649401465651,
+            49.036183212123
+          ],
+          [
+            -123.08671874607688,
+            49.03627812293092
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_175b7d634e98305e",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08671874607688,
+            49.03627812293092
+          ],
+          [
+            -123.08663246753953,
+            49.03636876418143
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_75b7d634e98305e3",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08645586770497,
+            49.036554293866274
+          ],
+          [
+            -123.08619320684018,
+            49.03645546698942
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_5b7d634e98305e3c",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08619320684018,
+            49.03645546698942
+          ],
+          [
+            -123.08592408918231,
+            49.036725409374746
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b7d634e98305e3cf",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08592408918231,
+            49.036725409374746
+          ],
+          [
+            -123.08594821100851,
+            49.036861049636585
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7d634e98305e3cf1",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08594821100851,
+            49.036861049636585
+          ],
+          [
+            -123.08622701605977,
+            49.03697835194905
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d634e98305e3cf1d",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08622701605977,
+            49.03697835194905
+          ],
+          [
+            -123.08653383679105,
+            49.037107441045215
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_634e98305e3cf1d9",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08653383679105,
+            49.037107441045215
+          ],
+          [
+            -123.08688282890435,
+            49.03675094792117
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_34e98305e3cf1d9c",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08688282890435,
+            49.03675094792117
+          ],
+          [
+            -123.08645586770497,
+            49.036554293866274
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_4e98305e3cf1d9cc",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08663246753953,
+            49.03636876418143
+          ],
+          [
+            -123.08645586770497,
+            49.036554293866274
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_e98305e3cf1d9cc1",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0870770027782,
+            49.036552599491664
+          ],
+          [
+            -123.08663246753953,
+            49.03636876418143
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_98305e3cf1d9cc15",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0870770027782,
+            49.036552599491664
+          ],
+          [
+            -123.08688282890435,
+            49.03675094792117
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8305e3cf1d9cc157",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0870770027782,
+            49.036552599491664
+          ],
+          [
+            -123.08716260886177,
+            49.036465152704785
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_305e3cf1d9cc157c",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08716260886177,
+            49.036465152704785
+          ],
+          [
+            -123.08671874607688,
+            49.03627812293092
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_05e3cf1d9cc157c6",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08716260886177,
+            49.036465152704785
+          ],
+          [
+            -123.08749530764854,
+            49.03617943719272
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_5e3cf1d9cc157c69",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08749530764854,
+            49.03617943719272
+          ],
+          [
+            -123.08751912536634,
+            49.03610096873192
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_e3cf1d9cc157c692",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08751912536634,
+            49.03610096873192
+          ],
+          [
+            -123.0876234991019,
+            49.03599434976335
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_3cf1d9cc157c692b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08794264547427,
+            49.03566833667792
+          ],
+          [
+            -123.08809293974006,
+            49.03535643194091
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_cf1d9cc157c692b5",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08809293974006,
+            49.03535643194091
+          ],
+          [
+            -123.08816542907338,
+            49.03523344365907
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_f1d9cc157c692b57",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08816542907338,
+            49.03523344365907
+          ],
+          [
+            -123.08813047923101,
+            49.03513919215842
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_1d9cc157c692b576",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08813047923101,
+            49.03513919215842
+          ],
+          [
+            -123.08793892524554,
+            49.03505453177481
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d9cc157c692b5762",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08796664253258,
+            49.035022107279204
+          ],
+          [
+            -123.08793892524554,
+            49.03505453177481
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_9cc157c692b5762b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08796664253258,
+            49.035022107279204
+          ],
+          [
+            -123.08764821395732,
+            49.03489121776342
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_cc157c692b5762bc",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08764821395732,
+            49.03489121776342
+          ],
+          [
+            -123.08749752377453,
+            49.035043409695135
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_c157c692b5762bcb",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08749752377453,
+            49.035043409695135
+          ],
+          [
+            -123.08780388604106,
+            49.03516280326805
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_157c692b5762bcb7",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08780388604106,
+            49.03516280326805
+          ],
+          [
+            -123.08774587774107,
+            49.035207103418514
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_57c692b5762bcb79",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08774587774107,
+            49.035207103418514
+          ],
+          [
+            -123.08758471346744,
+            49.03514383695755
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7c692b5762bcb797",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08780388604106,
+            49.03516280326805
+          ],
+          [
+            -123.08793892524554,
+            49.03505453177481
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_c692b5762bcb797a",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08774587774107,
+            49.035207103418514
+          ],
+          [
+            -123.08809293974006,
+            49.03535643194091
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_692b5762bcb797ad",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08794264547427,
+            49.03566833667792
+          ],
+          [
+            -123.08751055733462,
+            49.035512229327296
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_92b5762bcb797ad5",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08735434827011,
+            49.03566343222661
+          ],
+          [
+            -123.0872697579791,
+            49.03574531158037
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_2b5762bcb797ad50",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08778180795339,
+            49.03583263502516
+          ],
+          [
+            -123.08794264547427,
+            49.03566833667792
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b5762bcb797ad50d",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08735434827011,
+            49.03566343222661
+          ],
+          [
+            -123.08778180795339,
+            49.03583263502516
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_5762bcb797ad50d8",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08768930857904,
+            49.03592712451251
+          ],
+          [
+            -123.08778180795339,
+            49.03583263502516
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_762bcb797ad50d80",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0872697579791,
+            49.03574531158037
+          ],
+          [
+            -123.08719328160083,
+            49.03581933715786
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_62bcb797ad50d805",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08768930857904,
+            49.03592712451251
+          ],
+          [
+            -123.0872697579791,
+            49.03574531158037
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_2bcb797ad50d8059",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08719328160083,
+            49.03581933715786
+          ],
+          [
+            -123.0870983375189,
+            49.03591123846129
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_bcb797ad50d80596",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0876234991019,
+            49.03599434976335
+          ],
+          [
+            -123.08768930857904,
+            49.03592712451251
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_cb797ad50d805965",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08719328160083,
+            49.03581933715786
+          ],
+          [
+            -123.0876234991019,
+            49.03599434976335
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b797ad50d8059651",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0870983375189,
+            49.03591123846129
+          ],
+          [
+            -123.08704824749805,
+            49.035959723126005
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_797ad50d8059651a",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08751912536634,
+            49.03610096873192
+          ],
+          [
+            -123.0870983375189,
+            49.03591123846129
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_97ad50d8059651a9",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08850563499753,
+            49.035394313928315
+          ],
+          [
+            -123.088498576482,
+            49.03531783869704
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7ad50d8059651a98",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.088498576482,
+            49.03531783869704
+          ],
+          [
+            -123.08864495358857,
+            49.03519213007054
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_ad50d8059651a982",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08864495358857,
+            49.03519213007054
+          ],
+          [
+            -123.08881264610118,
+            49.03516746185787
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d50d8059651a982d",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08881264610118,
+            49.03516746185787
+          ],
+          [
+            -123.08878107788281,
+            49.035075226271424
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_50d8059651a982d7",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08878107788281,
+            49.035075226271424
+          ],
+          [
+            -123.08916277795423,
+            49.035055314644865
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_0d8059651a982d7f",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08916277795423,
+            49.035055314644865
+          ],
+          [
+            -123.08924933986283,
+            49.03521894548611
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d8059651a982d7f8",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08924933986283,
+            49.03521894548611
+          ],
+          [
+            -123.0888749005218,
+            49.03526167316793
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8059651a982d7f87",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0888749005218,
+            49.03526167316793
+          ],
+          [
+            -123.08890106662726,
+            49.03536022881216
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_059651a982d7f878",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08890106662726,
+            49.03536022881216
+          ],
+          [
+            -123.08904357882544,
+            49.03532186028223
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_59651a982d7f878c",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08904357882544,
+            49.03532186028223
+          ],
+          [
+            -123.0891653994314,
+            49.0356515625425
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_9651a982d7f878c3",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0891653994314,
+            49.0356515625425
+          ],
+          [
+            -123.08901908674758,
+            49.03567479771148
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_651a982d7f878c33",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08901908674758,
+            49.03567479771148
+          ],
+          [
+            -123.08903881480339,
+            49.03572819062276
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_51a982d7f878c338",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08903881480339,
+            49.03572819062276
+          ],
+          [
+            -123.08893763802932,
+            49.035719873913294
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_1a982d7f878c338d",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08893763802932,
+            49.035719873913294
+          ],
+          [
+            -123.08895994053114,
+            49.03579955454738
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_a982d7f878c338dc",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0891319091824,
+            49.03641395069402
+          ],
+          [
+            -123.08907333869848,
+            49.036484710507715
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_982d7f878c338dc2",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08907333869848,
+            49.036484710507715
+          ],
+          [
+            -123.08933572063484,
+            49.03660214107781
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_82d7f878c338dc24",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08933572063484,
+            49.03660214107781
+          ],
+          [
+            -123.08906441349413,
+            49.03686267271857
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_2d7f878c338dc24f",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08906441349413,
+            49.03686267271857
+          ],
+          [
+            -123.0887745524558,
+            49.03677163046449
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_d7f878c338dc24fe",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0887745524558,
+            49.03677163046449
+          ],
+          [
+            -123.08867255690308,
+            49.03686957483341
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7f878c338dc24fe8",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08861608079856,
+            49.036923807751094
+          ],
+          [
+            -123.08872384615158,
+            49.03697203837412
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_f878c338dc24fe89",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08872384615158,
+            49.03697203837412
+          ],
+          [
+            -123.0885743518829,
+            49.037115594277296
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_878c338dc24fe899",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08840274243174,
+            49.037280386373745
+          ],
+          [
+            -123.08867859635407,
+            49.037390593807714
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_78c338dc24fe8997",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08867859635407,
+            49.037390593807714
+          ],
+          [
+            -123.08842555854574,
+            49.0375971556516
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8c338dc24fe8997b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08842555854574,
+            49.0375971556516
+          ],
+          [
+            -123.08826412147862,
+            49.03761054857532
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_c338dc24fe8997b6",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08826412147862,
+            49.03761054857532
+          ],
+          [
+            -123.08767911700755,
+            49.03734365603353
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_338dc24fe8997b60",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08767911700755,
+            49.03734365603353
+          ],
+          [
+            -123.08795487511973,
+            49.037047409601364
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_38dc24fe8997b601",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08812097048323,
+            49.03686897365818
+          ],
+          [
+            -123.08817539876982,
+            49.03688463150458
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8dc24fe8997b601b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08817539876982,
+            49.03688463150458
+          ],
+          [
+            -123.08833138199515,
+            49.03673729871258
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_dc24fe8997b601b7",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08833138199515,
+            49.03673729871258
+          ],
+          [
+            -123.08830361877753,
+            49.03667275360726
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_c24fe8997b601b7b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08830361877753,
+            49.03667275360726
+          ],
+          [
+            -123.08839454798664,
+            49.03659101448379
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_24fe8997b601b7b5",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08862328544876,
+            49.03638539519113
+          ],
+          [
+            -123.08857778280404,
+            49.036217545456275
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_4fe8997b601b7b50",
+        "externalId": "",
+        "entrances": [
+          "e_fe8997b601b7b508",
+          "e_e8997b601b7b508f"
+        ],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08842255364215,
+            49.0356449375602
+          ],
+          [
+            -123.08850563499753,
+            49.035394313928315
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8997b601b7b508f7",
+        "externalId": "",
+        "entrances": [
+          "e_997b601b7b508f73",
+          "e_97b601b7b508f731"
+        ],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08890106662726,
+            49.03536022881216
+          ],
+          [
+            -123.08850563499753,
+            49.035394313928315
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7b601b7b508f7316",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08895994053114,
+            49.03579955454738
+          ],
+          [
+            -123.08902076568224,
+            49.036016865889735
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b601b7b508f73164",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08848082278189,
+            49.03585988022371
+          ],
+          [
+            -123.08842255364215,
+            49.0356449375602
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_601b7b508f731646",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08895994053114,
+            49.03579955454738
+          ],
+          [
+            -123.08848082278189,
+            49.03585988022371
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_01b7b508f7316462",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08902076568224,
+            49.036016865889735
+          ],
+          [
+            -123.08906065243889,
+            49.03615937017413
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_1b7b508f73164627",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08853916096615,
+            49.03607507757802
+          ],
+          [
+            -123.08848082278189,
+            49.03585988022371
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b7b508f731646270",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08902076568224,
+            49.036016865889735
+          ],
+          [
+            -123.08853916096615,
+            49.03607507757802
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7b508f7316462705",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08906065243889,
+            49.03615937017413
+          ],
+          [
+            -123.0891035971739,
+            49.036312799764495
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_b508f7316462705e",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08857778280404,
+            49.036217545456275
+          ],
+          [
+            -123.08853916096615,
+            49.03607507757802
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_508f7316462705e6",
+        "externalId": "",
+        "entrances": [
+          "e_08f7316462705e65"
+        ],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08906065243889,
+            49.03615937017413
+          ],
+          [
+            -123.08857778280404,
+            49.036217545456275
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_8f7316462705e651",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0891035971739,
+            49.036312799764495
+          ],
+          [
+            -123.0891319091824,
+            49.03641395069402
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_f7316462705e6511",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0891035971739,
+            49.036312799764495
+          ],
+          [
+            -123.08862328544876,
+            49.03638539519113
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_7316462705e6511b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08839454798664,
+            49.03659101448379
+          ],
+          [
+            -123.08862328544876,
+            49.03638539519113
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_316462705e6511b5",
+        "externalId": "",
+        "entrances": [
+          "e_16462705e6511b5a"
+        ],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0887745524558,
+            49.03677163046449
+          ],
+          [
+            -123.08839454798664,
+            49.03659101448379
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_6462705e6511b5a2",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08867255690308,
+            49.03686957483341
+          ],
+          [
+            -123.08861608079856,
+            49.036923807751094
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_462705e6511b5a2b",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08867255690308,
+            49.03686957483341
+          ],
+          [
+            -123.08833138199515,
+            49.03673729871258
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_62705e6511b5a2bf",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0885743518829,
+            49.037115594277296
+          ],
+          [
+            -123.0885111400593,
+            49.037176294948864
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_2705e6511b5a2bf1",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0885743518829,
+            49.037115594277296
+          ],
+          [
+            -123.08812097048323,
+            49.03686897365818
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_705e6511b5a2bf1f",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0885111400593,
+            49.037176294948864
+          ],
+          [
+            -123.08840274243174,
+            49.037280386373745
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_05e6511b5a2bf1fb",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08801508704545,
+            49.036982724040435
+          ],
+          [
+            -123.08812097048323,
+            49.03686897365818
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_5e6511b5a2bf1fbe",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0885111400593,
+            49.037176294948864
+          ],
+          [
+            -123.08801508704545,
+            49.036982724040435
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_e6511b5a2bf1fbe4",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08795487511973,
+            49.037047409601364
+          ],
+          [
+            -123.08801508704545,
+            49.036982724040435
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_6511b5a2bf1fbe43",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08840274243174,
+            49.037280386373745
+          ],
+          [
+            -123.08795487511973,
+            49.037047409601364
+          ]
+        ]
+      },
+      "properties": {
+        "id": "o_511b5a2bf1fbe432",
+        "externalId": "",
+        "entrances": [],
+        "kind": "Wall",
+        "footprintComponent": false
+      }
+    }
+  ]
+}
