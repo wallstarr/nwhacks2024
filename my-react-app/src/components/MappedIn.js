@@ -54,7 +54,7 @@ export const MappedIn = () => {
                 }
 
                 const endLocation = venue.locations.find(
-                    (location) => location.name === "Bass Pro Shops"
+                    (location) => location.name === "ICBC"
                 );
 
                 if (!endLocation) {
