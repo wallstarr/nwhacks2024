@@ -30,11 +30,20 @@ div::-webkit-scrollbar {
 }
 
 .mappedin-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .mappedin-container {
     /* Your existing styles for mappedin-container */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .wayfind-button {
@@ -89,8 +98,8 @@ div::-webkit-scrollbar {
 .title {
     background: rgba(255, 255, 255, 0.0);
     color: black;
-    position: fixed;
-    top: 20px;
+    position: absolute;
+    top: 15px;
     left: 510px;
     width: 450px;
     color: rgb(0, 0, 0);
@@ -112,8 +121,8 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.0); 
     color: black;
     position: fixed;
-    top: 20px;
-    right: 65px;
+    top: 15px;
+    right: 75px;
     width: 150px;
     color: rgb(0, 0, 0);
     border: none;
