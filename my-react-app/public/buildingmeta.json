@@ -1,6 +1,6 @@
 [
     {
-      "name": "LIFE SCIENCE BUILDING",
+      "name": "UBC Life Building",
       "address": "2350 Health Sciences Mall, Vancouver, BC V6T 1Z3",
       "venue": {
         "mapId": "657cc670040fcba69696e69e",
@@ -9,7 +9,7 @@
       }
     },
     {
-      "name": "AMS NEST",
+      "name": "AMS Student Nest",
       "address": "6133 University Blvd, Vancouver, BC V6T 1Z1",
       "venue": {
         "mapId": "659efcf1040fcba69696e7b6",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "TSAWWASSEN MILLS",
+      "name": "Tsawwassen Mills",
       "address": "5000 Canoe Pass Wy, Tsawwassen, BC V4M 0B3",
       "venue": {
         "mapId": "65ac3a0eca641a9a1399dc23",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "name": "PHARMACEUTICAL SCIENCES BUILDING",
+      "name": "UBC Pharmaceutical Sciences Building (PHRM) Concourse",
       "address": "2405 Wesbrook Mall, Vancouver, BC V6T 1Z3",
       "venue": {
         "mapId": "65ac7e9804c23e7916b1d0f1",
@@ -36,7 +36,7 @@
       }
     },
     {
-      "name": "DJAVAD MOWAFAGHIAN CENTRE FOR BRAIN HEALTH",
+      "name": "Djavad Mowafaghian Centre for Brain Health",
       "address": "2215 Wesbrook Mall, Vancouver, BC V6T 1Z3",
       "venue": {
         "mapId": "65ac802904c23e7916b1d0f6",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "name": "HOSPITAL DEPARTMENT OF RADIOLOGY BUILDING",
+      "name": "UBC Hospital Department of Radiology",
       "address": "2211 Wesbrook Mall, Vancouver, BC V6T 2B5",
       "venue": {
         "mapId": "65ac814004c23e7916b1d0f8",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "name": "CHEMICAL AND BIOLOGICAL ENGINEERING BUILDING",
+      "name": "UBC Chemical and Biological Engineering",
       "address": "2360 E Mall, Vancouver, BC V6T 1Z4",
       "venue": {
         "mapId": "65ac8200ca641a9a1399dc5f",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "name": "FACULTY OF FORESTRY BUILDING",
+      "name": "UBC Forest Engineering Research Institute of Canada Building (F.E.R.I.C.)",
       "address": "2424 Main Mall, Vancouver, BC V6T 1Z4",
       "venue": {
         "mapId": "65ac82ae04c23e7916b1d0f9",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "name": "BEATY BIODIVERSITY MUSEUM",
+      "name": "Beaty Biodiversity Museum",
       "address": "2212 Main Mall, Vancouver, BC V6T 1Z4",
       "venue": {
         "mapId": "65ac852904c23e7916b1d0fb",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "name": "SAUDER SCHOOL OF BUSINESS",
+      "name": "UBC Sauder School of Business",
       "address": "2053 Main Mall, Vancouver, BC V6T 1Z2",
       "venue": {
         "mapId": "65ac85b404c23e7916b1d0fc",
