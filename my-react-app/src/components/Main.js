@@ -30,7 +30,7 @@ export const Main = () => {
         }
     }
     return (
-        // <Mapbox style={{overflow: 'hidden'}}></Mapbox>
-        <MappedIn venueMap={lsiVenueMap}></MappedIn>
+        <Mapbox style={{overflow: 'hidden'}}></Mapbox>
+        // <MappedIn venueMap={lsiVenueMap}></MappedIn>
     )
 }

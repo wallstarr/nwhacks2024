@@ -88,6 +88,15 @@ export const Mapbox = () => {
         );
     }
 
+    const lsiVenueMap = {
+        name: "Tsawwassen Mills",
+        venue: {
+            mapId: "65ac3a0eca641a9a1399dc23",
+            key: "65ac4e9dca641a9a1399dc32",
+            secret: "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310",
+        }
+    }
+
     return (
         <div>
             <div
@@ -96,7 +105,7 @@ export const Mapbox = () => {
                 className="map transition"
                 style={{ display: showMappedIn ? "none" : "inherit" }}
             ></div>
-            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn /></div>
+            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={lsiVenueMap}/></div>
         </div>
     );
 };

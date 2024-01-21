@@ -1,10 +1,10 @@
 .mappedin-container {
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    height: 98vh;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     max-width: 100%;
     max-height: 100%;
 }
