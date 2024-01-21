@@ -1,6 +1,7 @@
 import { getVenue, showVenue, E_SDK_EVENT, TGetVenueMakerOptions, getVenueMaker } from '@mappedin/mappedin-js';
 import '@mappedin/mappedin-js/lib/mappedin.css';
 import { useEffect, useRef } from 'react';
+import './MappedIn.css'
 
 export const MappedIn = () => {
 
@@ -77,6 +78,6 @@ export const MappedIn = () => {
     }, []); // Empty dependency array
 
     return (
-        <div id='mappedin-container'></div>
+        <div className='mappedin-container' id='mappedin-container'></div>
     );
 }
