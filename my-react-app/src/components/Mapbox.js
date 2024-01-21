@@ -6,6 +6,7 @@ import "./Mapbox.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MapCard } from "./MapCard";
 import { MappedIn } from "./MappedIn";
+import buildingMeta from "./buildingmeta.json"
 
 export const Mapbox = () => {
     const [showMappedIn, setShowMappedIn] = useState(false);
@@ -16,9 +17,20 @@ export const Mapbox = () => {
 
     const placesData = useRef(null);
     const [selectedPlaceDetails, setSelectedPlaceDetails] = useState(null); // State to store selected place details
+    const [venueMap, setVenueMap] = useState({
+        "name": "Djavad Mowafaghian Centre for Brain Health",
+        "address": "2215 Wesbrook Mall, Vancouver, BC V6T 1Z3",
+        "venue": {
+            "mapId": "65ac802904c23e7916b1d0f6",
+            "key": "65a0422df128bbf7c7072349",
+            "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+        }
+    })
 
-    const jumpIntoBuilding = () => {
-        // const filteredJson = jsonList.filter((jsonObject) => jsonObject.name === targetName);
+    const jumpIntoBuilding = (targetName) => {
+        const filteredJson = buildingMeta.filter((jsonObject) => jsonObject.name === targetName);
+        setVenueMap(filteredJson[0]);
+        // console.log(venueMap)
         setShowMappedIn(true);
     }
 
@@ -48,35 +60,35 @@ export const Mapbox = () => {
     }, [])
 
     const fetchAllPlaceDetails = (places) => {
-      const detailPromises = places.map(place => 
-          axios.get(`http://localhost:3001/place-details?placeId=${place.placeId}`)
-              .then(res => ({ placeId: place.placeId, details: res.data }))
-              .catch(error => {
-                  console.error(`Error fetching details for placeId ${place.placeId}:`, error);
-                  return { placeId: place.placeId, details: null }; // Handle error for individual place
-              })
-      );
-  
-      axios.all(detailPromises)
-          .then(responses => {
-              detailsDict = {};
-              responses.forEach(response => {
-                  if (response) {
-                      detailsDict[response.placeId] = response.details;
-                  }
-              });
-              // placesData.current = detailsDict; // Update placesData with detailed info in a dictionary
-              addMarkersToMap(Object.values(placesData.current)); // Now add markers to map
-          })
-          .catch(error => console.error('Error fetching place details:', error));
-  };
+        const detailPromises = places.map(place =>
+            axios.get(`http://localhost:3001/place-details?placeId=${place.placeId}`)
+                .then(res => ({ placeId: place.placeId, details: res.data }))
+                .catch(error => {
+                    console.error(`Error fetching details for placeId ${place.placeId}:`, error);
+                    return { placeId: place.placeId, details: null }; // Handle error for individual place
+                })
+        );
+
+        axios.all(detailPromises)
+            .then(responses => {
+                detailsDict = {};
+                responses.forEach(response => {
+                    if (response) {
+                        detailsDict[response.placeId] = response.details;
+                    }
+                });
+                // placesData.current = detailsDict; // Update placesData with detailed info in a dictionary
+                addMarkersToMap(Object.values(placesData.current)); // Now add markers to map
+            })
+            .catch(error => console.error('Error fetching place details:', error));
+    };
 
     const addMarkersToMap = (placesData) => {
         placesData.forEach((place) => {
             const marker = new mapboxgl.Marker({ anchor: 'bottom' })
                 .setLngLat([place.longitude, place.latitude])
                 .addTo(map.current);
-                
+
             const filteredJson = detailsDict[place.placeId];
 
             const divElem = document.createElement("div");
@@ -103,15 +115,6 @@ export const Mapbox = () => {
         );
     }
 
-    const lsiVenueMap = {
-        name: "Tsawwassen Mills",
-        venue: {
-            mapId: "65ac3a0eca641a9a1399dc23",
-            key: "65ac4e9dca641a9a1399dc32",
-            secret: "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310",
-        }
-    }
-
     return (
         <div>
             <div
@@ -120,7 +123,7 @@ export const Mapbox = () => {
                 className="map transition"
                 style={{ display: showMappedIn ? "none" : "inherit" }}
             ></div>
-            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={lsiVenueMap}/></div>
+            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={venueMap} /></div>
         </div>
     );
 };

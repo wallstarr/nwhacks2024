@@ -23,7 +23,7 @@ export const MapCard = (props) => {
 
     return (
         <div className='card'>
-            <button className='' onClick={() => {props.zoomIn()}}>
+            <button className='' onClick={() => {props.zoomIn(props.feature.name)}}>
                     Jump into building
             </button>
             <div>
