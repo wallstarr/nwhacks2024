@@ -11,11 +11,12 @@ export const MappedIn = (props) => {
     const [wayfindActive, setWayfindActive] = useState(false);
     const [venue, setVenue] = useState(null);
     const [selectedDestination, setSelectedDestination] = useState('');
+    const [departureLocation, setDepartureLocation] = useState('');
 
     // Function to handle selection change
     const handleDestinationChange = (event) => {
         setSelectedDestination(event.target.value);
-        console.log("newDestination: " + selectedDestination);
+
     };
 
     const handlePolygonClick = (polygons) => {
@@ -28,6 +29,8 @@ export const MappedIn = (props) => {
     };
 
     const handlePositionClick = async (position) => {
+
+        console.log("selectedDestination:" + selectedDestination)
         console.log("Handling position click");
         const coordinate = mapViewRef.current.currentMap.createCoordinate(
             position.latitude,
@@ -35,12 +38,11 @@ export const MappedIn = (props) => {
         );
 
         const nearestNode = coordinate.nearestNode;
+        setDepartureLocation(nearestNode);
         if (!nearestNode) {
             console.error('Nearest node not found');
             return;
         }
-
-        console.log("selectedDestination: " + selectedDestination)
 
         const endLocation = venue.locations.find(
             (location) => location.name === selectedDestination
@@ -57,7 +59,6 @@ export const MappedIn = (props) => {
         } catch (error) {
             console.error('Error getting directions:', error);
         }
-        mapViewRef.current._subscribers.CLICK = []
     };
 
     const handleClick = (event) => {
@@ -93,7 +94,7 @@ export const MappedIn = (props) => {
     useEffect(() => {
         if (mapViewRef.current) {
             mapViewRef.current._subscribers.CLICK = []
-
+    
             if (wayfindActive) {
                 mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position));
             } else {
@@ -101,7 +102,23 @@ export const MappedIn = (props) => {
                 mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => handlePolygonClick(polygons));
             }
         }
-    }, [wayfindActive]);
+    }, [wayfindActive, selectedDestination]);
+
+    useEffect(() => {
+        // Check if departureLocation and selectedDestination are available
+        if (departureLocation && selectedDestination) {
+            mapViewRef.current.Paths.removeAll();
+            const endLocation = venue.locations.find(
+                (location) => location.name === selectedDestination
+            );
+    
+            // Ensure endLocation is found
+            if (endLocation) {
+                const directions = departureLocation.directionsTo(endLocation);
+                mapViewRef.current.Journey.draw(directions);
+            }
+        }
+    }, [selectedDestination, departureLocation, venue]); // Add dependencies as needed
 
     return (
         <div className="mappedin-wrapper">
