@@ -127,7 +127,8 @@ export const Mapbox = () => {
                 className="map transition"
                 style={{ display: showMappedIn ? "none" : "inherit" }}
             ></div>
-            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={venueMap} jumpOut={jumpOutOfBuilding}/></div>
+            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn key={venueMap.venue.mapId} venueMap={venueMap} jumpOut={jumpOutOfBuilding}/></div>
         </div>
     );
 };
+

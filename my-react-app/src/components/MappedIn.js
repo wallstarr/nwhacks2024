@@ -39,9 +39,6 @@ export const MappedIn = (props) => {
     };
 
     const handlePositionClick = async (position) => {
-
-        console.log("selectedDestination: " + selectedDestination)
-        console.log("Handling position click");
         const coordinate = mapViewRef.current.currentMap.createCoordinate(
             position.latitude,
             position.longitude
@@ -116,7 +113,6 @@ export const MappedIn = (props) => {
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
             mapViewRef.current.on(E_SDK_EVENT.CLICK, handleClick);
-            console.log(mapViewRef.current.Camera)
         }
     };
 
@@ -181,8 +177,8 @@ export const MappedIn = (props) => {
     return (
         <div className="mappedin-wrapper">
             <div className='mappedin-container' ref={containerRef}></div>
-            
-            <button className="back-button" onClick={() => {props.jumpOut()}}>Back</button>
+
+            <button className="back-button" onClick={() => { props.jumpOut() }}>Back</button>
 
             <button
                 className="wayfind-button"
@@ -230,3 +226,4 @@ export const MappedIn = (props) => {
 
     );
 };
+
