@@ -1,3 +1,27 @@
 .map .mapboxgl-control-container{
     display: none;
 }
+
+.marker {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 50px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+.map {
+    width: 100vw; 
+    height: 98vh;
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.transition {
+    transition: opacity 0.5s ease-in-out;
+}
