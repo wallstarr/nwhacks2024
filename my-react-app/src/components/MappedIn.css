@@ -3,6 +3,11 @@
     height: 100vh;
 }
 
+body {
+    font-family: 'Inter', sans-serif;;
+}
+
+
 /* hide scrollbar but allow scrolling */
 div {
     -ms-overflow-style: none;
@@ -61,7 +66,7 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.5);
     color: black;
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 0;
     width: 450px;
     color: rgb(0, 0, 0);
@@ -72,7 +77,7 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.5); 
     color: black;
     position: fixed;
-    top: 25px;
+    top: 40px;
     left: 0;
     width: 450px;
     color: rgb(0, 0, 0);
