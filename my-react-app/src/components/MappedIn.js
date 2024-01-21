@@ -159,6 +159,9 @@ export const MappedIn = (props) => {
     return (
         <div className="mappedin-wrapper">
             <div className='mappedin-container' ref={containerRef}></div>
+            
+            <button className="back-button">Back</button>
+
             <button
                 className="wayfind-button"
                 onClick={() => setWayfindActive(!wayfindActive)}

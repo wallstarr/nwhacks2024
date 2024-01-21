@@ -55,6 +55,24 @@ div::-webkit-scrollbar {
     cursor: pointer;
 }
 
+.back-button {
+    position: absolute;
+    top: 10px;
+    /* Adjust as needed */
+    left: 20px;
+    /* Adjust as needed */
+    z-index: 10;
+    /* Ensures the button is above the map */
+
+    /* Additional button styling */
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 .destination-selector {
     position: absolute;
     top: 80px; /* Adjust based on your layout */
