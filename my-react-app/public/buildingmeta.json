@@ -1,0 +1,93 @@
+[
+    {
+      "name": "LIFE SCIENCE BUILDING",
+      "address": "2350 Health Sciences Mall, Vancouver, BC V6T 1Z3",
+      "venue": {
+        "mapId": "657cc670040fcba69696e69e",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "AMS NEST",
+      "address": "6133 University Blvd, Vancouver, BC V6T 1Z1",
+      "venue": {
+        "mapId": "659efcf1040fcba69696e7b6",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "TSAWWASSEN MILLS",
+      "address": "5000 Canoe Pass Wy, Tsawwassen, BC V4M 0B3",
+      "venue": {
+        "mapId": "65ac3a0eca641a9a1399dc23",
+        "key": "65ac4e9dca641a9a1399dc32",
+        "secret": "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310"
+      }
+    },
+    {
+      "name": "PHARMACEUTICAL SCIENCES BUILDING",
+      "address": "2405 Wesbrook Mall, Vancouver, BC V6T 1Z3",
+      "venue": {
+        "mapId": "65ac7e9804c23e7916b1d0f1",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "DJAVAD MOWAFAGHIAN CENTRE FOR BRAIN HEALTH",
+      "address": "2215 Wesbrook Mall, Vancouver, BC V6T 1Z3",
+      "venue": {
+        "mapId": "65ac802904c23e7916b1d0f6",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "HOSPITAL DEPARTMENT OF RADIOLOGY BUILDING",
+      "address": "2211 Wesbrook Mall, Vancouver, BC V6T 2B5",
+      "venue": {
+        "mapId": "65ac814004c23e7916b1d0f8",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "CHEMICAL AND BIOLOGICAL ENGINEERING BUILDING",
+      "address": "2360 E Mall, Vancouver, BC V6T 1Z4",
+      "venue": {
+        "mapId": "65ac8200ca641a9a1399dc5f",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "FACULTY OF FORESTRY BUILDING",
+      "address": "2424 Main Mall, Vancouver, BC V6T 1Z4",
+      "venue": {
+        "mapId": "65ac82ae04c23e7916b1d0f9",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "BEATY BIODIVERSITY MUSEUM",
+      "address": "2212 Main Mall, Vancouver, BC V6T 1Z4",
+      "venue": {
+        "mapId": "65ac852904c23e7916b1d0fb",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    },
+    {
+      "name": "SAUDER SCHOOL OF BUSINESS",
+      "address": "2053 Main Mall, Vancouver, BC V6T 1Z2",
+      "venue": {
+        "mapId": "65ac85b404c23e7916b1d0fc",
+        "key": "65a0422df128bbf7c7072349",
+        "secret": "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4"
+      }
+    }
+  ]
+  
