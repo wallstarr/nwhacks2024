@@ -25,3 +25,8 @@
 .transition {
     transition: opacity 0.5s ease-in-out;
 }
+
+.mapboxgl-popup-content {
+    border-radius: 10px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

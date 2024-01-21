@@ -1,3 +1,4 @@
+import "./MapCard.css"
 import { useEffect, useState } from 'react';
 
 export const MapCard = (props) => {
@@ -23,8 +24,8 @@ export const MapCard = (props) => {
 
     return (
         <div className='card'>
-            <button className='' onClick={() => {props.zoomIn(props.feature.name)}}>
-                    Jump into building
+            <button className='jump' onClick={() => {props.zoomIn()}}>
+                    View Building Map
             </button>
             <div>
                 <h2>
@@ -40,7 +41,7 @@ export const MapCard = (props) => {
                     {props.feature.formatted_phone_number}
                 </div>
                 <div>
-                    {props.feature.website}
+                    <a href={props.feature.website}>{props.feature.website}</a>
                 </div>
             </div>
         </div>
