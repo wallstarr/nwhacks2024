@@ -16,6 +16,7 @@ export const MapCard = (props) => {
 
     useEffect(() => {
     }, [props.feature]);
+
     return (
         <div className='card'>
             <button className='' onClick={() => {props.zoomIn()}}>
