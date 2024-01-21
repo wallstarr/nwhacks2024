@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
+import { MappedIn } from './MappedIn';
 import './Mapbox.css'
 
 export const Mapbox = () => {
+
+    const [showMappedIn, setShowMappedIn] = useState(false);
 
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -18,7 +21,19 @@ export const Mapbox = () => {
         });
     });
 
+    useEffect(() => {
+        setTimeout(performAction, 5000);
+    }, [])
+
+    function performAction() {
+        setShowMappedIn(true);
+    }
+
+
     return (
-        <div ref={mapContainer} id='map' className='map' style={{width: '100vw', height: '100vh'}}></div>
+        <div>
+            <div ref={mapContainer} id='map' className='map transition' style={{opacity: showMappedIn ? '0' : '100' }}></div>
+            <div className='transition' style={{opacity: showMappedIn ? '100' : '0' }}><MappedIn/></div>
+        </div>
     )
 }
