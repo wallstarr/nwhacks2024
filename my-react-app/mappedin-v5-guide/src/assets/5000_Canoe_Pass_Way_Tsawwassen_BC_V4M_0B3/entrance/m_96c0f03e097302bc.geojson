@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08860237271098,
+            49.03630825262037
+          ],
+          [
+            -123.08860017781414,
+            49.03630015610617
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_fe8997b601b7b508",
+        "externalId": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0886045903346,
+            49.03631643296623
+          ],
+          [
+            -123.08860239543705,
+            49.036308336452066
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_e8997b601b7b508f",
+        "externalId": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08846139931902,
+            49.035527755818975
+          ],
+          [
+            -123.08846406317647,
+            49.035519720014626
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_997b601b7b508f73",
+        "externalId": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08847223049857,
+            49.03549508241757
+          ],
+          [
+            -123.08847489435253,
+            49.035487046612985
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_97b601b7b508f731",
+        "externalId": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.0885639611368,
+            49.03616656031331
+          ],
+          [
+            -123.08856176623898,
+            49.03615846379994
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_08f7316462705e65",
+        "externalId": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -123.08851102767683,
+            49.03648630749886
+          ],
+          [
+            -123.0885184188723,
+            49.03647966331923
+          ]
+        ]
+      },
+      "properties": {
+        "id": "e_16462705e6511b5a",
+        "externalId": ""
+      }
+    }
+  ]
+}
