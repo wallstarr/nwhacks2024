@@ -16,7 +16,6 @@ export const MappedIn = (props) => {
     // Function to handle selection change
     const handleDestinationChange = (event) => {
         setSelectedDestination(event.target.value);
-
     };
 
     const handlePolygonClick = (polygons) => {
@@ -140,6 +139,10 @@ export const MappedIn = (props) => {
                     ))}
                 </select>
             </div>
+            <div style={{background: "white", color: "black", position: "fixed", top: 0, left: 0, width: 450}}>{props.venueMap.name}</div>
+            <div style={{background: "white", color: "black", position: "fixed", top: 25, left: 0, width: 450}}>{props.venueMap.address}</div>
         </div>
+
+        
     );
 };

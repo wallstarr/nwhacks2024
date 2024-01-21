@@ -4,6 +4,7 @@ import { MappedIn } from './MappedIn';
 export const Main = () => {
     const lsiVenueMap = {
         name: "LIFE SCIENCE BUILDING UBC",
+        address: "2350 Health Sciences Mall, Vancouver, BC V6T 1Z3",
         venue: {
             mapId: "657cc670040fcba69696e69e",
             key: "65a0422df128bbf7c7072349",
@@ -20,6 +21,6 @@ export const Main = () => {
     }
     return (
         // <Mapbox style={{overflow: 'hidden'}}></Mapbox>
-        <MappedIn venueMap={tsawwassenMap}></MappedIn>
+        <MappedIn venueMap={lsiVenueMap}></MappedIn>
     )
 }
