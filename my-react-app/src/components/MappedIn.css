@@ -43,3 +43,16 @@ div::-webkit-scrollbar {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+.destination-selector {
+    position: absolute;
+    top: 80px; /* Adjust based on your layout */
+    right: 20px; /* Adjust based on your layout */
+    z-index: 10;
+}
+
+.destination-selector select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

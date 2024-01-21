@@ -10,9 +10,16 @@ export const MappedIn = (props) => {
 
     const [wayfindActive, setWayfindActive] = useState(false);
     const [venue, setVenue] = useState(null);
+    const [selectedDestination, setSelectedDestination] = useState('');
+
+    // Function to handle selection change
+    const handleDestinationChange = (event) => {
+        setSelectedDestination(event.target.value);
+        console.log("newDestination: " + selectedDestination);
+    };
 
     const handlePolygonClick = (polygons) => {
-        console.log("Handling polygon click");
+        console.log(venue.locations);
         if (polygons.length > 0) {
             mapViewRef.current.setPolygonColor(polygons[0], "#00A36C");
         } else {
@@ -33,8 +40,10 @@ export const MappedIn = (props) => {
             return;
         }
 
+        console.log("selectedDestination: " + selectedDestination)
+
         const endLocation = venue.locations.find(
-            (location) => location.name === "ICBC"
+            (location) => location.name === selectedDestination
         );
 
         if (!endLocation) {
@@ -48,6 +57,7 @@ export const MappedIn = (props) => {
         } catch (error) {
             console.error('Error getting directions:', error);
         }
+        mapViewRef.current._subscribers.CLICK = []
     };
 
     const handleClick = (event) => {
@@ -82,12 +92,12 @@ export const MappedIn = (props) => {
 
     useEffect(() => {
         if (mapViewRef.current) {
-            mapViewRef.current.off(E_SDK_EVENT.CLICK, handleClick);
-            console.log(mapViewRef.current)
+            mapViewRef.current._subscribers.CLICK = []
 
             if (wayfindActive) {
                 mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position));
             } else {
+                mapViewRef.current.Paths.removeAll();
                 mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => handlePolygonClick(polygons));
             }
         }
@@ -105,6 +115,14 @@ export const MappedIn = (props) => {
             >
                 {wayfindActive ? 'Cancel' : 'Wayfind'}
             </button>
+            <div className="destination-selector">
+                <select onChange={handleDestinationChange} value={selectedDestination}>
+                    <option value="">Select a destination</option>
+                    {venue && venue.locations.map(location => (
+                        <option key={location.id} value={location.name}>{location.name}</option>
+                    ))}
+                </select>
+            </div>
         </div>
     );
 };
