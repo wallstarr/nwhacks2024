@@ -9,6 +9,11 @@
     max-height: 100%;
 }
 
+body {
+    font-family: 'Inter', sans-serif;;
+}
+
+
 /* hide scrollbar but allow scrolling */
 div {
     -ms-overflow-style: none;
@@ -23,3 +28,102 @@ div::-webkit-scrollbar {
     display: none;
     /* for Chrome, Safari, and Opera */
 }
+
+.mappedin-wrapper {
+    position: relative;
+}
+
+.mappedin-container {
+    /* Your existing styles for mappedin-container */
+}
+
+.wayfind-button {
+    position: absolute;
+    top: 20px;
+    /* Adjust as needed */
+    right: 20px;
+    /* Adjust as needed */
+    z-index: 10;
+    /* Ensures the button is above the map */
+
+    /* Additional button styling */
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.destination-selector {
+    position: absolute;
+    top: 80px; /* Adjust based on your layout */
+    right: 20px; /* Adjust based on your layout */
+    z-index: 10;
+}
+
+.destination-selector select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.title {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 450px;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.addy {
+    background: rgba(255, 255, 255, 0.5); 
+    color: black;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 450px;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.distance {
+    background: rgba(255, 255, 255, 0.5); 
+    color: black;
+    position: fixed;
+    bottom: 025px;
+    right: 0;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.accessibility-slider {
+    position: absolute;
+    top: 140px; /* Adjust based on your layout */
+    right: 20px; /* Adjust based on your layout */
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 40px; /* Adjust width as needed */
+}
+
+.accessibility-slider label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+.accessibility-slider input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    margin: auto; /* Center the slider within the container */
+}
+

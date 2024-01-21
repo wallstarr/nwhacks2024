@@ -1,83 +1,189 @@
-import { getVenue, showVenue, E_SDK_EVENT, TGetVenueMakerOptions, getVenueMaker } from '@mappedin/mappedin-js';
+import { showVenue, E_SDK_EVENT, getVenueMaker } from '@mappedin/mappedin-js';
 import '@mappedin/mappedin-js/lib/mappedin.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './MappedIn.css'
 
-export const MappedIn = () => {
+export const MappedIn = (props) => {
 
-    const lsi = {
-        mapId: "657cc670040fcba69696e69e",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
+    const mapViewRef = useRef(null);
+    const containerRef = useRef(null);
+
+    const [wayfindActive, setWayfindActive] = useState(false);
+    const [venue, setVenue] = useState(null);
+    const [selectedDestination, setSelectedDestination] = useState('');
+    const [departureLocation, setDepartureLocation] = useState('');
+    const [distance, setDistance] = useState(0);
+    const [isAccessibilityMode, setIsAccessibilityMode] = useState(false);
+
+
+    // Function to handle selection change
+    const handleDestinationChange = (event) => {
+        setSelectedDestination(event.target.value);
     };
 
-    const nest = {
-        mapId: "659efcf1040fcba69696e7b6",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
+    const handleAccessibilityChange = (event) => {
+        setIsAccessibilityMode(!isAccessibilityMode);
     };
 
-    const tsawwassen = {
-        mapId: "65ac3a0eca641a9a1399dc23",
-        key: "65ac4e9dca641a9a1399dc32",
-        secret: "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310",
+    const handlePolygonClick = (polygons) => {
+        if (polygons.length > 0) {
+            mapViewRef.current.setPolygonColor(polygons[0], "#00A36C");
+        } else {
+            mapViewRef.current.clearAllPolygonColors();
+        }
     };
 
-    const mapViewRef = useRef(null); // useRef to keep track of the mapView
+    const handlePositionClick = async (position) => {
 
-    async function init() {
-        // Check if the map is already initialized
+        console.log("selectedDestination: " + selectedDestination)
+        console.log("Handling position click");
+        const coordinate = mapViewRef.current.currentMap.createCoordinate(
+            position.latitude,
+            position.longitude
+        );
+
+        const nearestNode = coordinate.nearestNode;
+        setDepartureLocation(nearestNode);
+        if (!nearestNode) {
+            console.error('Nearest node not found');
+            return;
+        }
+
+        if (!venue || !venue.locations) {
+            console.error('Venue data not available');
+            return;
+        }
+
+        const endLocation = venue.locations.find(
+            (location) => location.name === selectedDestination
+        );
+
+        if (!endLocation) {
+            console.error('End location not found');
+            return;
+        }
+
+        try {
+            const directions = nearestNode.directionsTo(endLocation);
+            mapViewRef.current.Journey.draw(directions, {
+                pathOptions: {
+                    nearRadius: 1,
+                    farRadius: 1,
+                },
+                accessible: true,
+            });
+        } catch (error) {
+            console.error('Error getting directions:', error);
+        }
+    };
+
+    const handleClick = (event) => {
+        if (wayfindActive) {
+            // Handle as position click
+            handlePositionClick(event.position);
+        } else {
+            // Handle as polygon click
+            handlePolygonClick(event.polygons);
+        }
+    };
+
+    const init = async () => {
         if (!mapViewRef.current) {
-            const venue = await getVenueMaker(lsi);
-            mapViewRef.current = await showVenue(document.getElementById("mappedin-container"), venue);
+            const fetchedVenue = await getVenueMaker(props.venueMap.venue);
+            setVenue(fetchedVenue); // Store the fetched venue in state
+            mapViewRef.current = await showVenue(containerRef.current, fetchedVenue);
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
-
-            mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => {
-                if (polygons.length > 0) {
-                    mapViewRef.current.setPolygonColor(polygons[0], "#00A36C");
-                } else {
-                    mapViewRef.current.clearAllPolygonColors();
-                }
-            });
-
-            mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => {
-                const coordinate = mapViewRef.current.currentMap.createCoordinate(
-                    position.latitude,
-                    position.longitude
-                );
-
-                const nearestNode = coordinate.nearestNode;
-                if (!nearestNode) {
-                    console.error('Nearest node not found');
-                    return;
-                }
-
-                const endLocation = venue.locations.find(
-                    (location) => location.name === "Bass Pro Shops"
-                );
-
-                if (!endLocation) {
-                    console.error('End location not found');
-                    return;
-                }
-
-                try {
-                    const directions = nearestNode.directionsTo(endLocation);
-                    mapViewRef.current.Journey.draw(directions);
-                } catch (error) {
-                    console.error('Error getting directions:', error);
-                }
-            });
+            mapViewRef.current.on(E_SDK_EVENT.CLICK, handleClick);
+            console.log(mapViewRef.current.Camera)
         }
-    }
+    };
 
     useEffect(() => {
         init();
-        console.log('MappedIn component mounted');
-    }, []); // Empty dependency array
+        return () => {
+            if (mapViewRef.current) {
+                mapViewRef.current.off(E_SDK_EVENT.CLICK);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (mapViewRef.current) {
+            mapViewRef.current._subscribers.CLICK = []
+
+            if (wayfindActive) {
+                mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position));
+            } else {
+                mapViewRef.current.Paths.removeAll();
+                mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => handlePolygonClick(polygons));
+            }
+        }
+    }, [wayfindActive, selectedDestination]);
+
+    useEffect(() => {
+        // Check if departureLocation and selectedDestination are available
+        if (departureLocation && selectedDestination) {
+            mapViewRef.current.Paths.removeAll();
+            if (!venue || !venue.locations) {
+                console.error('Venue data not available');
+                return;
+            }
+            const endLocation = venue.locations.find(
+                (location) => location.name === selectedDestination
+            );
+
+            // Ensure endLocation is found
+            if (endLocation) {
+                const directions = departureLocation.directionsTo(endLocation);
+                mapViewRef.current.Journey.draw(directions, (directions, {
+                    pathOptions: {
+                        nearRadius: 1,
+                        farRadius: 1,
+                    },
+                    accessible: isAccessibilityMode,
+                }));
+                setDistance(directions.distance)
+            }
+        }
+    }, [selectedDestination, departureLocation, isAccessibilityMode, venue]);
 
     return (
-        <div className='mappedin-container' id='mappedin-container'></div>
+        <div className="mappedin-wrapper">
+            <div className='mappedin-container' ref={containerRef}></div>
+            <button
+                className="wayfind-button"
+                onClick={() => setWayfindActive(!wayfindActive)}
+                style={{
+                    backgroundColor: wayfindActive ? 'orange' : 'green',
+                }}
+            >
+                {wayfindActive ? 'Cancel' : 'Wayfind'}
+            </button>
+            <div className="destination-selector">
+                <select onChange={handleDestinationChange} value={selectedDestination}>
+                    <option value="">Select a destination</option>
+                    {venue && venue.locations
+                        .filter(location => !location.name.toLowerCase().startsWith('unnamed'))
+                        .map(location => (
+                            <option key={location.id} value={location.name}>{location.name}</option>
+                        ))}
+                </select>
+            </div>
+            <div className="accessibility-slider">
+                <label htmlFor="accessibilityMode">♿</label>
+                <input
+                    type="checkbox"
+                    id="accessibilityMode"
+                    checked={isAccessibilityMode}
+                    onChange={handleAccessibilityChange}
+                />
+            </div>
+            <div className='title'>{props.venueMap.name}</div>
+            <div className='addy'>{props.venueMap.address}</div>
+            <div className='distance'>{Math.round(distance) + "m"}</div>
+        </div>
+
+
     );
-}
+};
