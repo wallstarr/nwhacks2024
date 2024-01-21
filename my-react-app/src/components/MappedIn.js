@@ -25,22 +25,19 @@ export const MappedIn = () => {
 
     async function init() {
         const venue = await getVenueMaker(tsawwassen);
-        const mapView = await showVenue(document.getElementById("app"), venue);
+        const mapView = await showVenue(document.getElementById("mappedin-container"), venue);
         mapView.FloatingLabels.labelAllLocations();
         mapView.addInteractivePolygonsForAllLocations();
         mapView.on(E_SDK_EVENT.CLICK, ({ polygons }) => {
-            console.log(`Polygon with id ${polygons[0].id} clicked!`);
+            
         });
     }
 
     useEffect(() => {
         init();
-    })
-
-    // document.addEventListener('DOMContentLoaded', init);
+    }, [])  // Empty dependency array to ensure this runs only once
 
     return (
-        <div className='app'></div>
+        <div id='mappedin-container'></div>  // Changed from className to id
     )
 }
-
