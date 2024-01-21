@@ -4,25 +4,30 @@ import axios from 'axios';
 import './Mapbox.css'
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MapCard } from './MapCard';
+import { MappedIn } from './MappedIn';
 
 export const Mapbox = () => {
 
+    const [showMappedIn, setShowMappedIn] = useState(false);
+
     const mapContainer = useRef(null);
     const map = useRef(null);
+
     const placesData = useRef(null)
     const [selectedPlaceDetails, setSelectedPlaceDetails] = useState(null); // State to store selected place details
-    useEffect(() => {
 
+    useEffect(() => {
         if (map.current) return;
         mapboxgl.accessToken = 'pk.eyJ1IjoibWF4aW11c2w1OSIsImEiOiJjbHJtandqdXQwd2dvMmpvZnphOHRvMm9jIn0.XMUyvUmW_sGAUEugPnjTxg';
         map.current = new mapboxgl.Map({
             container: mapContainer.current, // container ID
-            style: 'mapbox://styles/mapbox/dark-v11', // style URL
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
             center: [-123.117, 49.238], // starting position [lng, lat]
             zoom: 12, // starting zoom
         });
+    });
 
-        axios.get('http://localhost:3000/places-coordinates')
+    axios.get('http://localhost:3000/places-coordinates')
         .then(response => {
             placesData.current = response.data
             // Ensure the map instance is available
@@ -30,9 +35,6 @@ export const Mapbox = () => {
             addMarkersToMap(placesData.current);
         })
         .catch(error => console.error('Error fetching data: ', error));
-
-        
-    });
 
     const addMarkersToMap = (placesData) => {
         console.log(placesData)
@@ -45,20 +47,30 @@ export const Mapbox = () => {
                 console.log("here")
                 fetchPlaceDetailsById(place.placeId); // Fetch details when marker is clicked
             });
-         });
+        });
     };
 
     const fetchPlaceDetailsById = (placeId) => {
-        axios.get(`http://localhost:3000/place-details?placeId=${placeId}`)
-            .then(res => {
-                setSelectedPlaceDetails(res.data); // Update state with fetched details
-            })
-            .catch(error => console.error(`Error fetching details: `, error));
+        axios.get('http://localhost:3000/place-details?placeId=${placeId}')
+                .then(res => {
+            setSelectedPlaceDetails(res.data); // Update state with fetched details
+        })
+            .catch(error => console.error('Error fetching details:', error));
     };
+
+    useEffect(() => {
+        setTimeout(performAction, 5000);
+    }, [])
+
+    function performAction() {
+        setShowMappedIn(true);
+    }
+
 
     return (
         <div>
-            <div ref={mapContainer} id='map' className='map' style={{width: '100vw', height: '100vh'}}/>
+            <div ref={mapContainer} id='map' className='map transition' style={{ opacity: showMappedIn ? '0' : '100' }}></div>
+            <div className='transition' style={{ opacity: showMappedIn ? '100' : '0' }}><MappedIn /></div>
             {selectedPlaceDetails && <MapCard feature={selectedPlaceDetails} />}
         </div>
     )
