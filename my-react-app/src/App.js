@@ -1,5 +1,6 @@
 import './App.css';
 import { Main } from './components/Main';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   return (

@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import axios from 'axios';
-import { MappedIn } from './MappedIn';
 import './Mapbox.css'
 import "mapbox-gl/dist/mapbox-gl.css";
+import { MapCard } from './MapCard';
+import { MappedIn } from './MappedIn';
 
 export const Mapbox = () => {
 
