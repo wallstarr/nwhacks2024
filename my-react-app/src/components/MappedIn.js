@@ -69,6 +69,7 @@ export const MappedIn = (props) => {
         <>
             <div className='mappedin-container' ref={containerRef} style={{display: "flex"}}>
                 <div style={{background: "white", color: "black", position: "fixed", top: 0, left: 0, width: 450}}>{props.venueMap.name}</div>
+                <div style={{background: "white", color: "black", position: "fixed", top: 25, left: 0, width: 450}}>{props.venueMap.address}</div>
             </div>
         </>
 
