@@ -27,8 +27,8 @@ export const Mapbox = () => {
         map.current = new mapboxgl.Map({
             container: mapContainer.current, // container ID
             style: "mapbox://styles/mapbox/streets-v12", // style URL
-            center: [-123.117, 49.238], // starting position [lng, lat]
-            zoom: 12, // starting zoom
+            center: [-123.2501, 49.2676], // starting position [lng, lat]
+            zoom: 13, // starting zoom
         });
     });
 
