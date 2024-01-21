@@ -94,3 +94,30 @@ div::-webkit-scrollbar {
     color: rgb(0, 0, 0);
     border: none;
 }
+
+.accessibility-slider {
+    position: absolute;
+    top: 140px; /* Adjust based on your layout */
+    right: 20px; /* Adjust based on your layout */
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 40px; /* Adjust width as needed */
+}
+
+.accessibility-slider label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+.accessibility-slider input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    margin: auto; /* Center the slider within the container */
+}
+

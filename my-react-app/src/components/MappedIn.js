@@ -13,10 +13,16 @@ export const MappedIn = (props) => {
     const [selectedDestination, setSelectedDestination] = useState('');
     const [departureLocation, setDepartureLocation] = useState('');
     const [distance, setDistance] = useState(0);
+    const [isAccessibilityMode, setIsAccessibilityMode] = useState(false);
+
 
     // Function to handle selection change
     const handleDestinationChange = (event) => {
         setSelectedDestination(event.target.value);
+    };
+
+    const handleAccessibilityChange = (event) => {
+        setIsAccessibilityMode(!isAccessibilityMode);
     };
 
     const handlePolygonClick = (polygons) => {
@@ -29,7 +35,7 @@ export const MappedIn = (props) => {
 
     const handlePositionClick = async (position) => {
 
-        console.log("selectedDestination:" + selectedDestination)
+        console.log("selectedDestination: " + selectedDestination)
         console.log("Handling position click");
         const coordinate = mapViewRef.current.currentMap.createCoordinate(
             position.latitude,
@@ -63,7 +69,8 @@ export const MappedIn = (props) => {
                 pathOptions: {
                     nearRadius: 1,
                     farRadius: 1,
-                }
+                },
+                accessible: true,
             });
         } catch (error) {
             console.error('Error getting directions:', error);
@@ -88,6 +95,7 @@ export const MappedIn = (props) => {
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
             mapViewRef.current.on(E_SDK_EVENT.CLICK, handleClick);
+            console.log(mapViewRef.current.Camera)
         }
     };
 
@@ -132,12 +140,13 @@ export const MappedIn = (props) => {
                     pathOptions: {
                         nearRadius: 1,
                         farRadius: 1,
-                    }
+                    },
+                    accessible: isAccessibilityMode,
                 }));
                 setDistance(directions.distance)
             }
         }
-    }, [selectedDestination, departureLocation, venue]);
+    }, [selectedDestination, departureLocation, isAccessibilityMode, venue]);
 
     return (
         <div className="mappedin-wrapper">
@@ -161,7 +170,15 @@ export const MappedIn = (props) => {
                         ))}
                 </select>
             </div>
-
+            <div className="accessibility-slider">
+                <label htmlFor="accessibilityMode">♿</label>
+                <input
+                    type="checkbox"
+                    id="accessibilityMode"
+                    checked={isAccessibilityMode}
+                    onChange={handleAccessibilityChange}
+                />
+            </div>
             <div className='title'>{props.venueMap.name}</div>
             <div className='addy'>{props.venueMap.address}</div>
             <div className='distance'>{Math.round(distance) + "m"}</div>
