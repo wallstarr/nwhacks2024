@@ -3,25 +3,7 @@ import '@mappedin/mappedin-js/lib/mappedin.css';
 import { useEffect, useRef, useState } from 'react';
 import './MappedIn.css'
 
-export const MappedIn = () => {
-
-    const lsi = {
-        mapId: "657cc670040fcba69696e69e",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
-    };
-
-    const nest = {
-        mapId: "659efcf1040fcba69696e7b6",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
-    };
-
-    const tsawwassen = {
-        mapId: "65ac3a0eca641a9a1399dc23",
-        key: "65ac4e9dca641a9a1399dc32",
-        secret: "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310",
-    };
+export const MappedIn = (props) => {
 
     const mapViewRef = useRef(null);
     const containerRef = useRef(null);
@@ -65,7 +47,8 @@ export const MappedIn = () => {
 
     const init = async () => {
         if (!mapViewRef.current) {
-            const venue = await getVenueMaker(lsi);
+            // prop from parent should include this as our previous version of lsi/nest/tsawwassen
+            const venue = await getVenueMaker(props.venueMap.venue);
             mapViewRef.current = await showVenue(containerRef.current, venue);
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
@@ -84,7 +67,9 @@ export const MappedIn = () => {
 
     return (
         <>
-            <div className='mappedin-container' ref={containerRef}></div>
+            <div className='mappedin-container' ref={containerRef} style={{display: "flex"}}>
+                <div style={{background: "white", color: "black", position: "fixed", top: 0, left: 0, width: 450}}>{props.venueMap.name}</div>
+            </div>
         </>
 
     );
