@@ -28,7 +28,12 @@ const tsawwassen: TGetVenueMakerOptions = {
 
 async function init() {
     const venue = await getVenueMaker(tsawwassen);
-    const mapView = await showVenue(document.getElementById("app")!, venue);
+    const mapView = await showVenue(document.getElementById("app")!, venue,  {
+        multiBufferRendering: true,
+        outdoorView: {
+            enabled: true,
+        },
+    });
     mapView.addInteractivePolygonsForAllLocations();
     mapView.FloatingLabels.labelAllLocations();
 
