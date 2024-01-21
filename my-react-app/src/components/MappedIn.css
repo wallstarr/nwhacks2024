@@ -144,7 +144,7 @@ div::-webkit-scrollbar {
     display: block;
     margin-bottom: 5px;
     color: #333;
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -152,5 +152,31 @@ div::-webkit-scrollbar {
     width: 100%;
     cursor: pointer;
     margin: auto; /* Center the slider within the container */
+}
+
+.tooltip-slider {
+    position: absolute;
+    top: 140px; /* Adjust based on your layout - below the accessibility slider */
+    right: 95px; /* Same horizontal alignment as the accessibility slider */
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 40px; /* Adjust width as needed */
+}
+
+.tooltip-slider label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+}
+
+.tooltip-slider input[type="checkbox"] {
+    width: 100%;
+    cursor: pointer;
+    margin: auto; /* Center the checkbox within the container */
 }
 

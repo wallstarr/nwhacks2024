@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 
 export const MapCard = (props) => {
 
-    function parseOpeningHours(opHrs) {
+    function parseOpeningHours() {
+        if(!props.feature.opening_hours) return;
+        const opHrs = props.feature.opening_hours.weekday_text;
+
         let d = new Date();
         d = d.getDay();
 
@@ -11,6 +14,7 @@ export const MapCard = (props) => {
 
         if(d < 0)
             d = 6; 
+
         return opHrs[d];  
     }
 
@@ -30,7 +34,7 @@ export const MapCard = (props) => {
                     {props.feature.formatted_address}
                 </div>
                 <div>
-                    {parseOpeningHours(props.feature.opening_hours.weekday_text)}
+                    {parseOpeningHours()}
                 </div>
                 <div>
                     {props.feature.formatted_phone_number}

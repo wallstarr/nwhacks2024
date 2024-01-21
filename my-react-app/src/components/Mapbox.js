@@ -12,11 +12,13 @@ export const Mapbox = () => {
 
     const mapContainer = useRef(null);
     const map = useRef(null);
+    let detailsDict = {}
 
     const placesData = useRef(null);
     const [selectedPlaceDetails, setSelectedPlaceDetails] = useState(null); // State to store selected place details
 
     const jumpIntoBuilding = () => {
+        // const filteredJson = jsonList.filter((jsonObject) => jsonObject.name === targetName);
         setShowMappedIn(true);
     }
 
@@ -37,22 +39,48 @@ export const Mapbox = () => {
             .get("http://localhost:3001/places-coordinates")
             .then((response) => {
                 placesData.current = response.data;
+                fetchAllPlaceDetails(placesData.current);
                 // Ensure the map instance is available
-                if (!map.current) return;
-                addMarkersToMap(placesData.current);
+                // if (!map.current) return;
+                // addMarkersToMap(placesData.current);
             })
             .catch((error) => console.error("Error fetching data: ", error));
     }, [])
 
+    const fetchAllPlaceDetails = (places) => {
+      const detailPromises = places.map(place => 
+          axios.get(`http://localhost:3001/place-details?placeId=${place.placeId}`)
+              .then(res => ({ placeId: place.placeId, details: res.data }))
+              .catch(error => {
+                  console.error(`Error fetching details for placeId ${place.placeId}:`, error);
+                  return { placeId: place.placeId, details: null }; // Handle error for individual place
+              })
+      );
+  
+      axios.all(detailPromises)
+          .then(responses => {
+              detailsDict = {};
+              responses.forEach(response => {
+                  if (response) {
+                      detailsDict[response.placeId] = response.details;
+                  }
+              });
+              // placesData.current = detailsDict; // Update placesData with detailed info in a dictionary
+              addMarkersToMap(Object.values(placesData.current)); // Now add markers to map
+          })
+          .catch(error => console.error('Error fetching place details:', error));
+  };
+
     const addMarkersToMap = (placesData) => {
-        console.log(placesData);
         placesData.forEach((place) => {
             const marker = new mapboxgl.Marker({ anchor: 'bottom' })
                 .setLngLat([place.longitude, place.latitude])
                 .addTo(map.current);
+                
+            const filteredJson = detailsDict[place.placeId];
 
             const divElem = document.createElement("div");
-            SetCardDetails(divElem);
+            SetCardDetails(divElem, filteredJson);
 
             const popup = new mapboxgl.Popup({
                 offset: 50,
@@ -62,28 +90,15 @@ export const Mapbox = () => {
                 .setDOMContent(divElem);
 
             marker.setPopup(popup);
-
-            marker.getElement().addEventListener("click", () => {
-                fetchPlaceDetailsById(place.placeId); // Fetch details when marker is clicked
-            });
         });
     };
 
-    const fetchPlaceDetailsById = (placeId) => {
-        axios
-            .get(`http://localhost:3001/place-details?placeId=${placeId}`)
-            .then((res) => {
-                setSelectedPlaceDetails(res.data); // Update state with fetched details
-            })
-            .catch((error) => console.error("Error fetching details:", error));
-    };
-
-    function SetCardDetails(divElem) {
+    function SetCardDetails(divElem, filteredJson) {
         const card = ReactDOM.createRoot(divElem);
         card.render(
             <MapCard
                 zoomIn={jumpIntoBuilding}
-                feature={selectedPlaceDetails}
+                feature={filteredJson}
             />
         );
     }
