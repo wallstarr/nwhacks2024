@@ -64,8 +64,6 @@ div::-webkit-scrollbar {
     top: 0;
     left: 0;
     width: 450px;
-
-    /* / Additional button styling / */
     color: rgb(0, 0, 0);
     border: none;
 }
@@ -77,8 +75,6 @@ div::-webkit-scrollbar {
     top: 25px;
     left: 0;
     width: 450px;
-
-    /* / Additional button styling / */
     color: rgb(0, 0, 0);
     border: none;
 }
@@ -90,8 +86,6 @@ div::-webkit-scrollbar {
     bottom: 025px;
     right: 0;
     width: 150px;
-
-    /* Additional button styling  */
     color: rgb(0, 0, 0);
     border: none;
 }
