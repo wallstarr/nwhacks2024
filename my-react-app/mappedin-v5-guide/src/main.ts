@@ -30,8 +30,7 @@ async function init() {
     const venue = await getVenueMaker(tsawwassen);
     const mapView = await showVenue(document.getElementById("app")!, venue);
     mapView.addInteractivePolygonsForAllLocations();
-
-    mapView.addInteractivePolygonsForAllLocations();
+    mapView.FloatingLabels.labelAllLocations();
 
     //Capture when the user clicks on a polygon.
     //The polygon that was clicked on is passed into the on method.
@@ -41,10 +40,33 @@ async function init() {
         //If they clicked on a polygon, change its color to orange,
         //otherwise reset them to their default color.
         if (polygons.length > 0) {
-            mapView.setPolygonColor(polygons[0], "#BF4320");
+            mapView.setPolygonColor(polygons[0], "#00A36C");
         } else {
             mapView.clearAllPolygonColors();
-        }   
+        }
+    });
+
+    //Capture the position where the user clicks.
+    mapView.on(E_SDK_EVENT.CLICK, ({ position }) => {
+        //Create coordinates based on their click location.
+        const coordinate = mapView.currentMap.createCoordinate(
+            position.latitude,
+            position.longitude
+        );
+
+        //Get the nearest node to the coordinates.
+        const nearestNode = coordinate.nearestNode;
+
+        //Create a destination to navigate to.
+        const endLocation = venue.locations.find(
+            (location) => location.name === "Bass Pro Shops"
+        );
+
+        //Create directions between the start and end locations.
+        const directions = nearestNode.directionsTo(endLocation);
+
+        //Get directions between the start and end locations.
+        mapView.Journey.draw(directions);
     });
 }
 
