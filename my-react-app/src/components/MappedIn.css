@@ -39,7 +39,7 @@ div::-webkit-scrollbar {
 
 .wayfind-button {
     position: absolute;
-    top: 20px;
+    top: 10px;
     /* Adjust as needed */
     right: 20px;
     /* Adjust as needed */
@@ -72,8 +72,8 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.0);
     color: black;
     position: fixed;
-    top: 10px;
-    left: 0;
+    top: 20px;
+    left: 510px;
     width: 450px;
     color: rgb(0, 0, 0);
     border: none;
@@ -83,8 +83,8 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.0); 
     color: black;
     position: fixed;
-    top: 40px;
-    left: 0;
+    bottom: -20px;
+    left: 0px;
     width: 450px;
     color: rgb(0, 0, 0);
     border: none;
@@ -94,8 +94,8 @@ div::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.0); 
     color: black;
     position: fixed;
-    bottom: 025px;
-    right: 0;
+    top: 20px;
+    right: 65px;
     width: 150px;
     color: rgb(0, 0, 0);
     border: none;

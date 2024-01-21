@@ -188,7 +188,8 @@ export const MappedIn = (props) => {
                 />
             </div>
             <div className='title'>{props.venueMap.name}</div>
-            <div className='addy'>{props.venueMap.address}</div>
+            <div className='addy'>
+                <h6>{props.venueMap.address}</h6></div>
             <div className='distance'>{Math.round(distance) + "m"}</div>
         </div>
 
