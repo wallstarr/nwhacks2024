@@ -91,7 +91,15 @@ export const MappedIn = (props) => {
         if (!mapViewRef.current) {
             const fetchedVenue = await getVenueMaker(props.venueMap.venue);
             setVenue(fetchedVenue); // Store the fetched venue in state
-            mapViewRef.current = await showVenue(containerRef.current, fetchedVenue);
+            mapViewRef.current = await showVenue(containerRef.current, fetchedVenue, {
+                multiBufferRendering: true,
+                outdoorView: {
+                enabled: true,
+                    headers: {
+                    'x-mappedin-tiles-key': 'bndoYWNrc3htYXBwZWRpbg',
+                    },
+                },
+              });
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
             mapViewRef.current.on(E_SDK_EVENT.CLICK, handleClick);
