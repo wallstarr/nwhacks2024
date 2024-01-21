@@ -3,28 +3,18 @@ import '@mappedin/mappedin-js/lib/mappedin.css';
 import { useEffect, useRef, useState } from 'react';
 import './MappedIn.css'
 
-export const MappedIn = () => {
-
-    const lsi = {
-        mapId: "657cc670040fcba69696e69e",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
-    };
-
-    const nest = {
-        mapId: "659efcf1040fcba69696e7b6",
-        key: "65a0422df128bbf7c7072349",
-        secret: "5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4",
-    };
-
-    const tsawwassen = {
-        mapId: "65ac3a0eca641a9a1399dc23",
-        key: "65ac4e9dca641a9a1399dc32",
-        secret: "61bb58f5c0a8ceee5cd7ebf782c64713164e16726f5f3d71f7895928126ac310",
-    };
+export const MappedIn = (props) => {
 
     const mapViewRef = useRef(null);
     const containerRef = useRef(null);
+
+    const [wayfindActive, setWayfindActive] = useState(false);
+    const [venue, setVenue] = useState(null);
+
+    const toggleWayfind = () => {
+        setWayfindActive(!wayfindActive);
+        // Additional logic for Wayfind can be added here
+    };
 
     const handlePolygonClick = (polygons) => {
         if (polygons.length > 0) {
@@ -34,7 +24,7 @@ export const MappedIn = () => {
         }
     };
 
-    const handlePositionClick = async (position, venue) => {
+    const handlePositionClick = async (position) => {
         const coordinate = mapViewRef.current.currentMap.createCoordinate(
             position.latitude,
             position.longitude
@@ -63,15 +53,26 @@ export const MappedIn = () => {
         }
     };
 
+    const updateEventListeners = () => {
+        if (mapViewRef.current) {
+            mapViewRef.current.off(E_SDK_EVENT.CLICK); // Remove existing click event listeners
+
+            // Add the appropriate event listener based on wayfindActive state
+            if (wayfindActive) {
+                mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position));
+            } else {
+                mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => handlePolygonClick(polygons));
+            }
+        }
+    };
+
     const init = async () => {
         if (!mapViewRef.current) {
-            const venue = await getVenueMaker(lsi);
-            mapViewRef.current = await showVenue(containerRef.current, venue);
+            const fetchedVenue = await getVenueMaker(props.venueMap.venue);
+            setVenue(fetchedVenue); // Store the fetched venue in state
+            mapViewRef.current = await showVenue(containerRef.current, fetchedVenue);
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
-
-            mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ polygons }) => handlePolygonClick(polygons));
-            mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position, venue));
         }
     };
 
@@ -82,10 +83,22 @@ export const MappedIn = () => {
         };
     }, []);
 
-    return (
-        <>
-            <div className='mappedin-container' ref={containerRef}></div>
-        </>
+    useEffect(() => {
+        updateEventListeners();
+    }, [wayfindActive, venue]);
 
+    return (
+        <div className="mappedin-wrapper">
+            <div className='mappedin-container' ref={containerRef}></div>
+            <button
+                className="wayfind-button"
+                onClick={toggleWayfind}
+                style={{
+                    backgroundColor: wayfindActive ? 'orange' : 'green',
+                }}
+            >
+                {wayfindActive ? 'Cancel' : 'Wayfind'}
+            </button>
+        </div>
     );
 };

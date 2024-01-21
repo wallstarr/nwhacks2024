@@ -17,3 +17,29 @@ div::-webkit-scrollbar {
     display: none;
     /* for Chrome, Safari, and Opera */
 }
+
+.mappedin-wrapper {
+    position: relative;
+}
+
+.mappedin-container {
+    /* Your existing styles for mappedin-container */
+}
+
+.wayfind-button {
+    position: absolute;
+    top: 20px;
+    /* Adjust as needed */
+    right: 20px;
+    /* Adjust as needed */
+    z-index: 10;
+    /* Ensures the button is above the map */
+
+    /* Additional button styling */
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
