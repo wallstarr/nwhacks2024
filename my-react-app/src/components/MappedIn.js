@@ -1,4 +1,4 @@
-import {showVenue, E_SDK_EVENT, getVenueMaker } from '@mappedin/mappedin-js';
+import { showVenue, E_SDK_EVENT, getVenueMaker } from '@mappedin/mappedin-js';
 import '@mappedin/mappedin-js/lib/mappedin.css';
 import { useEffect, useRef, useState } from 'react';
 import './MappedIn.css'
@@ -12,7 +12,7 @@ export const MappedIn = (props) => {
     const [venue, setVenue] = useState(null);
     const [selectedDestination, setSelectedDestination] = useState('');
     const [departureLocation, setDepartureLocation] = useState('');
-    const [distance , setDistance] = useState(0);
+    const [distance, setDistance] = useState(0);
 
     // Function to handle selection change
     const handleDestinationChange = (event) => {
@@ -59,7 +59,12 @@ export const MappedIn = (props) => {
 
         try {
             const directions = nearestNode.directionsTo(endLocation);
-            mapViewRef.current.Journey.draw(directions);
+            mapViewRef.current.Journey.draw(directions, {
+                pathOptions: {
+                    nearRadius: 1,
+                    farRadius: 1,
+                }
+            });
         } catch (error) {
             console.error('Error getting directions:', error);
         }
@@ -98,7 +103,7 @@ export const MappedIn = (props) => {
     useEffect(() => {
         if (mapViewRef.current) {
             mapViewRef.current._subscribers.CLICK = []
-    
+
             if (wayfindActive) {
                 mapViewRef.current.on(E_SDK_EVENT.CLICK, ({ position }) => handlePositionClick(position));
             } else {
@@ -119,15 +124,20 @@ export const MappedIn = (props) => {
             const endLocation = venue.locations.find(
                 (location) => location.name === selectedDestination
             );
-    
+
             // Ensure endLocation is found
             if (endLocation) {
                 const directions = departureLocation.directionsTo(endLocation);
-                mapViewRef.current.Journey.draw(directions);
+                mapViewRef.current.Journey.draw(directions, (directions, {
+                    pathOptions: {
+                        nearRadius: 1,
+                        farRadius: 1,
+                    }
+                }));
                 setDistance(directions.distance)
             }
         }
-    }, [selectedDestination, departureLocation, venue]); 
+    }, [selectedDestination, departureLocation, venue]);
 
     return (
         <div className="mappedin-wrapper">
@@ -144,16 +154,19 @@ export const MappedIn = (props) => {
             <div className="destination-selector">
                 <select onChange={handleDestinationChange} value={selectedDestination}>
                     <option value="">Select a destination</option>
-                    {venue && venue.locations.map(location => (
-                        <option key={location.id} value={location.name}>{location.name}</option>
-                    ))}
+                    {venue && venue.locations
+                        .filter(location => !location.name.toLowerCase().startsWith('unnamed'))
+                        .map(location => (
+                            <option key={location.id} value={location.name}>{location.name}</option>
+                        ))}
                 </select>
             </div>
+
             <div className='title'>{props.venueMap.name}</div>
             <div className='addy'>{props.venueMap.address}</div>
             <div className='distance'>{Math.round(distance) + "m"}</div>
         </div>
 
-        
+
     );
 };
