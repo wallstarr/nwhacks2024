@@ -56,3 +56,42 @@ div::-webkit-scrollbar {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+.title {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+
+    /* / Additional button styling / */
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.addy {
+    background: rgba(255, 255, 255, 0.5); 
+    color: black;
+    position: fixed;
+    top: 25px;
+    left: 0;
+    width: 450px;
+
+    /* / Additional button styling / */
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.distance {
+    background: rgba(255, 255, 255, 0.5); 
+    color: black;
+    position: fixed;
+    bottom: 025px;
+    right: 0;
+    width: 150px;
+
+    /* Additional button styling  */
+    color: rgb(0, 0, 0);
+    border: none;
+}

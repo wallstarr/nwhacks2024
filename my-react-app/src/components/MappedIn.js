@@ -12,6 +12,7 @@ export const MappedIn = (props) => {
     const [venue, setVenue] = useState(null);
     const [selectedDestination, setSelectedDestination] = useState('');
     const [departureLocation, setDepartureLocation] = useState('');
+    const [distance , setDistance] = useState(0);
 
     // Function to handle selection change
     const handleDestinationChange = (event) => {
@@ -19,7 +20,6 @@ export const MappedIn = (props) => {
     };
 
     const handlePolygonClick = (polygons) => {
-        console.log(venue.locations);
         if (polygons.length > 0) {
             mapViewRef.current.setPolygonColor(polygons[0], "#00A36C");
         } else {
@@ -40,6 +40,11 @@ export const MappedIn = (props) => {
         setDepartureLocation(nearestNode);
         if (!nearestNode) {
             console.error('Nearest node not found');
+            return;
+        }
+
+        if (!venue || !venue.locations) {
+            console.error('Venue data not available');
             return;
         }
 
@@ -107,6 +112,10 @@ export const MappedIn = (props) => {
         // Check if departureLocation and selectedDestination are available
         if (departureLocation && selectedDestination) {
             mapViewRef.current.Paths.removeAll();
+            if (!venue || !venue.locations) {
+                console.error('Venue data not available');
+                return;
+            }
             const endLocation = venue.locations.find(
                 (location) => location.name === selectedDestination
             );
@@ -115,6 +124,7 @@ export const MappedIn = (props) => {
             if (endLocation) {
                 const directions = departureLocation.directionsTo(endLocation);
                 mapViewRef.current.Journey.draw(directions);
+                setDistance(directions.distance)
             }
         }
     }, [selectedDestination, departureLocation, venue]); // Add dependencies as needed
@@ -139,8 +149,10 @@ export const MappedIn = (props) => {
                     ))}
                 </select>
             </div>
-            <div style={{background: "white", color: "black", position: "fixed", top: 0, left: 0, width: 450}}>{props.venueMap.name}</div>
-            <div style={{background: "white", color: "black", position: "fixed", top: 25, left: 0, width: 450}}>{props.venueMap.address}</div>
+            <div className='title'>{props.venueMap.name}</div>
+            <div className='addy'>{props.venueMap.address}</div>
+            <div className='distance'>{Math.round(distance) + "m"}</div>
+
         </div>
 
         
