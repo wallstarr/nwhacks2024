@@ -12,11 +12,13 @@ export const Mapbox = () => {
 
     const mapContainer = useRef(null);
     const map = useRef(null);
+    let detailsDict = {}
 
     const placesData = useRef(null);
     const [selectedPlaceDetails, setSelectedPlaceDetails] = useState(null); // State to store selected place details
 
     const jumpIntoBuilding = () => {
+        // const filteredJson = jsonList.filter((jsonObject) => jsonObject.name === targetName);
         setShowMappedIn(true);
     }
 
@@ -37,22 +39,48 @@ export const Mapbox = () => {
             .get("http://localhost:3001/places-coordinates")
             .then((response) => {
                 placesData.current = response.data;
+                fetchAllPlaceDetails(placesData.current);
                 // Ensure the map instance is available
-                if (!map.current) return;
-                addMarkersToMap(placesData.current);
+                // if (!map.current) return;
+                // addMarkersToMap(placesData.current);
             })
             .catch((error) => console.error("Error fetching data: ", error));
     }, [])
 
+    const fetchAllPlaceDetails = (places) => {
+      const detailPromises = places.map(place => 
+          axios.get(`http://localhost:3001/place-details?placeId=${place.placeId}`)
+              .then(res => ({ placeId: place.placeId, details: res.data }))
+              .catch(error => {
+                  console.error(`Error fetching details for placeId ${place.placeId}:`, error);
+                  return { placeId: place.placeId, details: null }; // Handle error for individual place
+              })
+      );
+  
+      axios.all(detailPromises)
+          .then(responses => {
+              detailsDict = {};
+              responses.forEach(response => {
+                  if (response) {
+                      detailsDict[response.placeId] = response.details;
+                  }
+              });
+              // placesData.current = detailsDict; // Update placesData with detailed info in a dictionary
+              addMarkersToMap(Object.values(placesData.current)); // Now add markers to map
+          })
+          .catch(error => console.error('Error fetching place details:', error));
+  };
+
     const addMarkersToMap = (placesData) => {
-        console.log(placesData);
         placesData.forEach((place) => {
             const marker = new mapboxgl.Marker({ anchor: 'bottom' })
                 .setLngLat([place.longitude, place.latitude])
                 .addTo(map.current);
+                
+            const filteredJson = detailsDict[place.placeId];
 
             const divElem = document.createElement("div");
-            SetCardDetails(divElem);
+            SetCardDetails(divElem, filteredJson);
 
             const popup = new mapboxgl.Popup({
                 offset: 50,
@@ -62,28 +90,15 @@ export const Mapbox = () => {
                 .setDOMContent(divElem);
 
             marker.setPopup(popup);
-
-            marker.getElement().addEventListener("click", () => {
-                fetchPlaceDetailsById(place.placeId); // Fetch details when marker is clicked
-            });
         });
     };
 
-    const fetchPlaceDetailsById = (placeId) => {
-        axios
-            .get(`http://localhost:3001/place-details?placeId=${placeId}`)
-            .then((res) => {
-                setSelectedPlaceDetails(res.data); // Update state with fetched details
-            })
-            .catch((error) => console.error("Error fetching details:", error));
-    };
-
-    function SetCardDetails(divElem) {
+    function SetCardDetails(divElem, filteredJson) {
         const card = ReactDOM.createRoot(divElem);
         card.render(
             <MapCard
                 zoomIn={jumpIntoBuilding}
-                feature={selectedPlaceDetails}
+                feature={{"formatted_address":"2350 Health Sciences Mall, Vancouver, BC V6T 1Z3, Canada","formatted_phone_number":"(604) 827-4128","name":"Life Sciences Institute","opening_hours":{"open_now":false,"periods":[{"close":{"day":1,"time":"1630"},"open":{"day":1,"time":"0830"}},{"close":{"day":2,"time":"1630"},"open":{"day":2,"time":"0830"}},{"close":{"day":3,"time":"1630"},"open":{"day":3,"time":"0830"}},{"close":{"day":4,"time":"1630"},"open":{"day":4,"time":"0830"}},{"close":{"day":5,"time":"1630"},"open":{"day":5,"time":"0830"}}],"weekday_text":["Monday: 8:30 AM – 4:30 PM","Tuesday: 8:30 AM – 4:30 PM","Wednesday: 8:30 AM – 4:30 PM","Thursday: 8:30 AM – 4:30 PM","Friday: 8:30 AM – 4:30 PM","Saturday: Closed","Sunday: Closed"]},"place_id":"ChIJi2OjBMlyhlQRPyK7WGib1dY","website":"http://lsi.ubc.ca/"}}
             />
         );
     }
