@@ -1,3 +1,12 @@
 .map .mapboxgl-control-container{
     display: none;
 }
+
+.marker {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 50px;
+    border-radius: 25%;
+    cursor: pointer;
+}
