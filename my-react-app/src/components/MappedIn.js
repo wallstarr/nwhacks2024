@@ -182,7 +182,7 @@ export const MappedIn = (props) => {
         <div className="mappedin-wrapper">
             <div className='mappedin-container' ref={containerRef}></div>
             
-            <button className="back-button">Back</button>
+            <button className="back-button" onClick={() => {props.jumpOut()}}>Back</button>
 
             <button
                 className="wayfind-button"

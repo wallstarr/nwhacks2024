@@ -34,6 +34,10 @@ export const Mapbox = () => {
         setShowMappedIn(true);
     }
 
+    const jumpOutOfBuilding = () => {
+        setShowMappedIn(false);
+    }
+
     useEffect(() => {
         if (map.current) return;
         mapboxgl.accessToken =
@@ -123,7 +127,7 @@ export const Mapbox = () => {
                 className="map transition"
                 style={{ display: showMappedIn ? "none" : "inherit" }}
             ></div>
-            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={venueMap} /></div>
+            <div className='transition' style={{ display: showMappedIn ? 'inherit' : 'none' }}><MappedIn venueMap={venueMap} jumpOut={jumpOutOfBuilding}/></div>
         </div>
     );
 };
