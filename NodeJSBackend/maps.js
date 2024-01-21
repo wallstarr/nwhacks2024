@@ -59,7 +59,9 @@ app.get('/find-place', async (req, res) => {
 
 
 app.get('/places-coordinates', async (req, res) => {
-    const places = ["Pacific Center", "Richmond Center"] // Assuming the body contains a "places" array
+    const places = ["Sauder_School_Of_Business", "Beaty_Biodiversity_Museum", "UBC_Faculty_Of_Forestry_Building", 
+    "UBC_Chemical_and_Biological_Building", "UBC_Hospital_Department_Of_Radiology_Building", "DJAVAD_MOWAFAGHIAN_CENTRE_FOR_BRAIN_HEALTH", 
+    "UBC_PHARMACEUTICAL_SCIENCES_BUILDING", "UBC_AMS_NEST", "UBC_Life_Sciencing_Building"] // Assuming the body contains a "places" array
 
     if (!places || !Array.isArray(places)) {
         return res.status(400).send('A valid array of place names is required');
