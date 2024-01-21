@@ -14,6 +14,7 @@ export const MappedIn = (props) => {
     const [departureLocation, setDepartureLocation] = useState('');
     const [distance, setDistance] = useState(0);
     const [isAccessibilityMode, setIsAccessibilityMode] = useState(false);
+    const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
 
     // Function to handle selection change
@@ -23,6 +24,10 @@ export const MappedIn = (props) => {
 
     const handleAccessibilityChange = (event) => {
         setIsAccessibilityMode(!isAccessibilityMode);
+    };
+
+    const handleTooltipsChange = (event) => {
+        setIsTooltipVisible(!isTooltipVisible);
     };
 
     const handlePolygonClick = (polygons) => {
@@ -72,6 +77,14 @@ export const MappedIn = (props) => {
                 },
                 accessible: true,
             });
+            if (isTooltipVisible) {
+                directions.instructions.forEach((instruction) => {
+                    mapViewRef.current.createTooltip(
+                        instruction.node,
+                        `<span style="background-color: azure; padding:0.2rem; font-size:0.7rem">${instruction.instruction}</span>`
+                    );
+                });
+            }
         } catch (error) {
             console.error('Error getting directions:', error);
         }
@@ -94,12 +107,12 @@ export const MappedIn = (props) => {
             mapViewRef.current = await showVenue(containerRef.current, fetchedVenue, {
                 multiBufferRendering: true,
                 outdoorView: {
-                enabled: true,
+                    enabled: true,
                     headers: {
-                    'x-mappedin-tiles-key': 'bndoYWNrc3htYXBwZWRpbg',
+                        'x-mappedin-tiles-key': 'bndoYWNrc3htYXBwZWRpbg',
                     },
                 },
-              });
+            });
             mapViewRef.current.FloatingLabels.labelAllLocations();
             mapViewRef.current.addInteractivePolygonsForAllLocations();
             mapViewRef.current.on(E_SDK_EVENT.CLICK, handleClick);
@@ -133,6 +146,7 @@ export const MappedIn = (props) => {
         // Check if departureLocation and selectedDestination are available
         if (departureLocation && selectedDestination) {
             mapViewRef.current.Paths.removeAll();
+            mapViewRef.current.removeAllTooltips();
             if (!venue || !venue.locations) {
                 console.error('Venue data not available');
                 return;
@@ -151,10 +165,18 @@ export const MappedIn = (props) => {
                     },
                     accessible: isAccessibilityMode,
                 }));
+                if (isTooltipVisible) {
+                    directions.instructions.forEach((instruction) => {
+                        mapViewRef.current.createTooltip(
+                            instruction.node,
+                            `<span style="background-color: azure; font-size:0.7rem">${instruction.instruction}</span>`
+                        );
+                    });
+                }
                 setDistance(directions.distance)
             }
         }
-    }, [selectedDestination, departureLocation, isAccessibilityMode, venue]);
+    }, [selectedDestination, departureLocation, isAccessibilityMode, isTooltipVisible, venue]);
 
     return (
         <div className="mappedin-wrapper">
@@ -169,7 +191,7 @@ export const MappedIn = (props) => {
                     backgroundColor: wayfindActive ? 'orange' : 'green',
                 }}
             >
-                {wayfindActive ? 'Cancel' : 'Wayfind'}
+                {wayfindActive ? 'Stop' : 'Wayfind'}
             </button>
             <div className="destination-selector">
                 <select onChange={handleDestinationChange} value={selectedDestination}>
@@ -188,6 +210,15 @@ export const MappedIn = (props) => {
                     id="accessibilityMode"
                     checked={isAccessibilityMode}
                     onChange={handleAccessibilityChange}
+                />
+            </div>
+            <div className="tooltip-slider">
+                <label htmlFor="tooltipsMode">🧭</label>
+                <input
+                    type="checkbox"
+                    id="tooltipsMode"
+                    checked={isTooltipVisible}
+                    onChange={handleTooltipsChange}
                 />
             </div>
             <div className='title'>{props.venueMap.name}</div>
