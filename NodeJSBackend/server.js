@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const port = 3001; // You can use any available port
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello, this is your Node.js backend!');
