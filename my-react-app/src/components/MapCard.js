@@ -10,7 +10,8 @@ export const MapCard = (props) => {
         d -= 1;
 
         if(d < 0)
-            d = 6;   
+            d = 6; 
+        return opHrs[d];  
     }
 
     useEffect(() => {
@@ -26,13 +27,13 @@ export const MapCard = (props) => {
                     {props.feature.name}
                 </h2>
                 <div>
-                    {props.feature.address}
+                    {props.feature.formatted_address}
                 </div>
                 <div>
-                    {parseOpeningHours(props.feature.openingHours)}
+                    {parseOpeningHours(props.feature.opening_hours.weekday_text)}
                 </div>
                 <div>
-                    {props.feature.phoneNum}
+                    {props.feature.formatted_phone_number}
                 </div>
                 <div>
                     {props.feature.website}
