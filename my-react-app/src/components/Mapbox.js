@@ -98,7 +98,7 @@ export const Mapbox = () => {
         card.render(
             <MapCard
                 zoomIn={jumpIntoBuilding}
-                feature={{"formatted_address":"2350 Health Sciences Mall, Vancouver, BC V6T 1Z3, Canada","formatted_phone_number":"(604) 827-4128","name":"Life Sciences Institute","opening_hours":{"open_now":false,"periods":[{"close":{"day":1,"time":"1630"},"open":{"day":1,"time":"0830"}},{"close":{"day":2,"time":"1630"},"open":{"day":2,"time":"0830"}},{"close":{"day":3,"time":"1630"},"open":{"day":3,"time":"0830"}},{"close":{"day":4,"time":"1630"},"open":{"day":4,"time":"0830"}},{"close":{"day":5,"time":"1630"},"open":{"day":5,"time":"0830"}}],"weekday_text":["Monday: 8:30 AM – 4:30 PM","Tuesday: 8:30 AM – 4:30 PM","Wednesday: 8:30 AM – 4:30 PM","Thursday: 8:30 AM – 4:30 PM","Friday: 8:30 AM – 4:30 PM","Saturday: Closed","Sunday: Closed"]},"place_id":"ChIJi2OjBMlyhlQRPyK7WGib1dY","website":"http://lsi.ubc.ca/"}}
+                feature={filteredJson}
             />
         );
     }
