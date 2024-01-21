@@ -1,4 +1,4 @@
-import { getVenue, showVenue, E_SDK_EVENT, TGetVenueMakerOptions, getVenueMaker } from '@mappedin/mappedin-js';
+import {showVenue, E_SDK_EVENT, getVenueMaker } from '@mappedin/mappedin-js';
 import '@mappedin/mappedin-js/lib/mappedin.css';
 import { useEffect, useRef, useState } from 'react';
 import './MappedIn.css'
@@ -127,7 +127,7 @@ export const MappedIn = (props) => {
                 setDistance(directions.distance)
             }
         }
-    }, [selectedDestination, departureLocation, venue]); // Add dependencies as needed
+    }, [selectedDestination, departureLocation, venue]); 
 
     return (
         <div className="mappedin-wrapper">
@@ -152,7 +152,6 @@ export const MappedIn = (props) => {
             <div className='title'>{props.venueMap.name}</div>
             <div className='addy'>{props.venueMap.address}</div>
             <div className='distance'>{Math.round(distance) + "m"}</div>
-
         </div>
 
         
