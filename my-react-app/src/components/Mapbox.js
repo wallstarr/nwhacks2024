@@ -51,7 +51,7 @@ export const Mapbox = () => {
     };
 
     const fetchPlaceDetailsById = (placeId) => {
-        axios.get('http://localhost:3000/place-details?placeId=${placeId}')
+        axios.get(`http://localhost:3000/place-details?placeId=${placeId}`)
                 .then(res => {
             setSelectedPlaceDetails(res.data); // Update state with fetched details
         })
@@ -59,7 +59,7 @@ export const Mapbox = () => {
     };
 
     useEffect(() => {
-        setTimeout(performAction, 5000);
+        // setTimeout(performAction, 5000);
     }, [])
 
     function performAction() {
@@ -69,8 +69,8 @@ export const Mapbox = () => {
 
     return (
         <div>
-            <div ref={mapContainer} id='map' className='map transition' style={{ opacity: showMappedIn ? '0' : '100' }}></div>
-            <div className='transition' style={{ opacity: showMappedIn ? '100' : '0' }}><MappedIn /></div>
+            <div ref={mapContainer} id='map' className='map transition' style={{ display: showMappedIn ? 'none' : 'inherit' }}></div>
+            {/* <div className='transition' style={{ opacity: showMappedIn ? 'inherit' : 'none' }}><MappedIn /></div> */}
             {selectedPlaceDetails && <MapCard feature={selectedPlaceDetails} />}
         </div>
     )
