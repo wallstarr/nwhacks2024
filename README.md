@@ -1,6 +1,6 @@
 # Marauders Map UBC
 
-This project was made as part of nwHacks 20244.
+This project was made as part of nwHacks 2024.
 
 ## Overview
 Marauders Map UBC revolutionizes indoor navigation at the University of British Columbia, offering students, faculty, and visitors an intuitive way to navigate complex campus buildings. With our app, you can effortlessly find your way through UBC's halls, accessing detailed 3D maps and step-by-step directions to every room. Whether you're rushing to a lecture, locating an office, or exploring campus facilities, Marauders Map UBC ensures you always find your way, making campus navigation smarter, faster, and more accessible.
