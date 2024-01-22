@@ -24,7 +24,7 @@ Marauders Map UBC revolutionizes indoor navigation at the University of British 
 - [Kevin Dang](https://github.com/kdang243):
 - [Maximus Leung](https://github.com/maximusl59):
   
-## Getting Started
+## Getting Started Locally
 1. Make sure to install the required dependencies for both React and the server using ``` npm install```
 2. Run the backend server
    ```cd NodeJSBackend```
