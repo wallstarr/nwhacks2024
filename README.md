@@ -18,6 +18,11 @@ Marauders Map UBC revolutionizes indoor navigation at the University of British 
 - MappedIn SDK
 - Google Maps API
 
+## Some views of the project
+![alt text](https://i.ibb.co/S54bzpG/Screen-Shot-2024-06-07-at-5-25-18-PM.png)
+![alt text](https://i.ibb.co/QYjP5wx/Screen-Shot-2024-06-07-at-5-22-41-PM.png)
+![alt text](https://i.ibb.co/YLgqSrQ/Screen-Shot-2024-06-07-at-5-23-20-PM.png)
+
 ## Team Members
 - [Mihir Bhandari](https://github.com/VexMihir):
 - [Dan Blustein](https://github.com/wallstarr):
